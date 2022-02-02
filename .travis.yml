@@ -1,0 +1,18 @@
+os:
+  - linux
+
+dist: xenial
+
+language: python
+addons:
+  sonarcloud:
+    organization: "testgopal"
+    token:
+      secure: "Uh+UQ1IEXD5meWrL66lXW6wSOu76YVkvRlvy0EmbMEyVjq4V76qwKrL3bqKjx6q/7aXr3uXx3Tmi6CccaJJyuIMyNoKFIGzzJx10yq2yhyIbn2egYtdJT+pAQQ/vFX3XI2pR+njJ1QrEBEcQXvH3anzEZdnSXEpeb611SP4Ca+QQEOjnqIEBKqtkrOiHsSguuDPAqaX4EvdJ0CZ7BRQBiCx2TxrGgQgnPYyRICyAo1FV6HFjPnLwCxa3Xby5OSpCBABI6v/PREnndGd+qMgTFyVyDdHL3JXbisiOGMA5kPo/eA/mf1uCQn2SrVI+tbaNbqULmDd0V4Q8GbJFkbFvxnpJ/qOH2p93lmYApCsLPNenSY1JzJ1NGIB9E6zbvOwdsGYszCurEthlEsjwKX4E5Hh6fm1le8cZ6EqnOHPh83wqW26n9R0uBCicZj0x3G+JglzIYpDBvdC95PQX2p/OZKCxmPXyWz7ZnWAJNkST+061SiB5nhX9we5fosEgG2gXOufyCJUrAYwc5TiklNzewNm16eKpGnXEK7XPncO5foMIxz/Dky2O8nAIhAJcjEkaxtN3RdSokGSRinO31tXFTeWG3BIdk928B/1Z47Rckgou1UK9EBD1FCfjI7Huzgb7BR10olT+byiXBRxDvATgdXvs/688zI8459w2nwER+xs=" # encrypted value of your token
+
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - sonar-scanner
+script:
+  - python -m pytest -v
+  - sonar-scanner
